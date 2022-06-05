@@ -11,7 +11,7 @@ import { MovieServiceService } from 'src/app/service/movie-service.service';
 export class DetailsComponent implements OnInit {
   movie!: IMovie;
   constructor(
-    private service: MovieServiceService,
+    public service: MovieServiceService,
     private _activatedRoute: ActivatedRoute
   ) {}
 

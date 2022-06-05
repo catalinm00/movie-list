@@ -3,16 +3,15 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { IMovie } from 'src/app/models/IMovie.interface';
 import { MovieServiceService } from 'src/app/service/movie-service.service';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  styleUrls: ['./list.component.css'],
 })
 export class ListComponent implements OnInit {
-
-  constructor(private service: MovieServiceService, private router: Router) {}
+  constructor(public service: MovieServiceService, private router: Router) {}
   title: string = '';
   movies$!: Observable<IMovie[]>;
 
@@ -23,19 +22,14 @@ export class ListComponent implements OnInit {
     });
   }
 
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    
+  openDetails(movie: IMovie) {
+    this.router.navigate(['details/', movie.imdbID]);
   }
 
-  openDetails(movie:IMovie){
-    
-    this.router.navigate(['details/',movie.imdbID])
+  showTitle(movie: IMovie): string {
+    if (movie.Title.length < 35) return movie.Title;
+    else return movie.Title.substring(0, 34) + '...';
   }
-
-  showTitle(movie: IMovie):string{
-    if(movie.Title.length < 35) return movie.Title;
-    else return movie.Title.substring(0,34)+"...";
-  }
-
 }

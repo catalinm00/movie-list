@@ -10,7 +10,7 @@
   <mat-grid-list cols="5" rowHeight="1:2" *ngIf="movies$ | async as movies">
     <mat-grid-tile *ngFor="let movie of movies" (click)="openDetails(movie)">
       <mat-card>
-        <img mat-card-image [src]="movie.Poster" />
+        <img mat-card-image [src]="service.getPoster(movie)" />
         <mat-card-title>{{ showTitle(movie) }}</mat-card-title>
       </mat-card>
     </mat-grid-tile>
