@@ -7,6 +7,13 @@ import { DetailsComponent } from './components/details/details.component';
 import { ListComponent } from './components/list/list.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatListModule} from '@angular/material/list';
+import { MatGridListModule} from '@angular/material/grid-list'
+import {MatCardModule} from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +27,14 @@ import {HttpClientModule} from '@angular/common/http'
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule, 
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatInputModule,
+    MatListModule, 
+    MatGridListModule,
+    MatCardModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

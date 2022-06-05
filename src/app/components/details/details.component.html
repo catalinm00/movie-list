@@ -1,1 +1,9 @@
-<p>details works!</p>
+<div class="container">
+    <h1>{{movie?.Title}}</h1>
+    <br>
+    <img [src]= 'movie?.Poster'>
+    <p>Date: {{movie?.Released}}</p>
+    <p>Languages: {{movie?.Language}}</p>
+    <p>Plot: {{movie?.Plot}}</p>
+</div>
+
