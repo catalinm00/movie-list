@@ -13,19 +13,19 @@ export class MovieServiceService {
   searchMovie(title: string): Observable<IMovie[]> {
     return this.http
       .get<IMovie[]>(
-        ' http://www.omdbapi.com/?s=' + title + '&type=movie' + this.apiKey
+        `http://www.omdbapi.com/?s=${title}&type=movie${this.apiKey}`
       )
       .pipe(map((resp: any) => resp.Search));
   }
 
   findById(id: string): Observable<IMovie> {
     return this.http.get<IMovie>(
-      ' http://www.omdbapi.com/?i=' + id + this.apiKey
+      `http://www.omdbapi.com/?i=${id}${this.apiKey}`
     );
   }
 
   getPoster(movie: IMovie): string {
-    if (movie.Poster == 'N/A') return 'assets/Image-Not-Available.png';
-    else return movie.Poster;
+    if (movie?.Poster == 'N/A') return 'assets/Image-Not-Available.png';
+    else return movie?.Poster;
   }
 }
