@@ -13,7 +13,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
 import { MatGridListModule} from '@angular/material/grid-list'
 import {MatCardModule} from '@angular/material/card';
-
+import {MatIconModule} from '@angular/material/icon'
 
 @NgModule({
   declarations: [
@@ -33,7 +33,8 @@ import {MatCardModule} from '@angular/material/card';
     MatInputModule,
     MatListModule, 
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule
 
   ],
   providers: [],

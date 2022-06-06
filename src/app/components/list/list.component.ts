@@ -17,12 +17,9 @@ export class ListComponent implements OnInit {
 
   searchMovies() {
     this.movies$ = this.service.searchMovie(this.title);
-    this.movies$.subscribe((val) => {
-      console.log(val);
-    });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {this.movies$?.subscribe();}
 
   openDetails(movie: IMovie) {
     this.router.navigate(['details/', movie.imdbID]);

@@ -1,8 +1,16 @@
 <div class="container">
-  <h1>{{ movie?.Title }}</h1>
-  <br />
-  <img [src]="service.getPoster(movie)" />
-  <p>Date: {{ movie?.Released }}</p>
-  <p>Languages: {{ movie?.Language }}</p>
-  <p>Plot: {{ movie?.Plot }}</p>
+  <mat-card>
+    <mat-card-title>
+      {{ movie?.Title }}
+    </mat-card-title>
+
+
+    <img [src]="service.getPoster(movie)" />
+    <p>Date: {{ movie?.Released }}</p>
+    <p>Languages: {{ movie?.Language }}</p>
+    <h5>Plot</h5>
+    <p>{{ movie?.Plot }}</p>
+    <h5>Actors</h5>
+    <p>{{ movie?.Actors }}</p>
+  </mat-card>
 </div>

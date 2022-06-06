@@ -17,7 +17,6 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this._activatedRoute.params.subscribe((params: Params) => {
-      console.log('el id es:' + params['id']);
       this.service.findById(params['id']).subscribe((val) => {
         this.movie = val;
       });

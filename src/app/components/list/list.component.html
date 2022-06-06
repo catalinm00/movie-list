@@ -1,11 +1,11 @@
 <div class="container">
   <br />
-  <mat-form-field>
-    <input matInput type="text" placeholder="Movie name" [(ngModel)]="title" />
-  </mat-form-field>
-  <button mat-raised-button color="primary" (click)="searchMovies()">
-    Search
-  </button>
+  <mat-form-field class="example-full-width">
+    <span matPrefix> </span>
+    <input type="text" matInput name= "search" [(ngModel)]= "title">
+    <mat-placeholder style="color:rgba(0, 0, 0, 0.685)">Movie name</mat-placeholder>
+    <button matSuffix mat-button (click)="searchMovies()"><mat-icon >search</mat-icon></button>
+    </mat-form-field>
 
   <mat-grid-list cols="5" rowHeight="1:2" *ngIf="movies$ | async as movies">
     <mat-grid-tile *ngFor="let movie of movies" (click)="openDetails(movie)">
