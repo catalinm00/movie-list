@@ -6,4 +6,5 @@ export interface IMovie{
     Poster: string;
     Plot: string;
     Actors: string;
+    Writer: string;
 }
