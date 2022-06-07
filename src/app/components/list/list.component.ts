@@ -26,7 +26,7 @@ export class ListComponent implements OnInit {
   }
 
   showTitle(movie: IMovie): string {
-    if (movie.Title.length < 35) return movie.Title;
-    else return movie.Title.substring(0, 34) + '...';
+    if (movie?.Title.length < 35) return movie.Title;
+    else return movie?.Title.substring(0, 34) + '...';
   }
 }
